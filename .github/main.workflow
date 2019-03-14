@@ -41,3 +41,11 @@ action "Publish" {
   args = "publish"
 }
 
+workflow "New workflow" {
+  on = "push"
+  resolves = ["Docker Tag"]
+}
+
+action "Docker Tag" {
+  uses = "./tag"
+}
